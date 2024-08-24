@@ -1,0 +1,10 @@
+live_config_reload = true
+
+[font]
+size = 16
+[font.normal]
+family = "MesloLGS NF"
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+

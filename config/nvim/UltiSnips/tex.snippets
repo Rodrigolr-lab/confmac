@@ -1,3 +1,122 @@
-snippet god "it finally worked" A
-i dont know what to say, THANK YOU JESUS!!
+global !p
+from datetime import date
+endglobal
+
+snippet med "medium vertical skip " bA
+\medskip
+
+endsnippet
+
+snippet $  "math inline section" A
+$$0$
+endsnippet
+
+snippet subsec "subsection" b
+\subsection{$1}
+$0
+endsnippet
+
+snippet date "date"
+`!p snip.rv = (date.today())`
+endsnippet
+
+snippet	doc "Document start " bA
+\documentclass[12pt]{article}
+
+\usapackage{minted}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{lmodern}        % Latin Modern family of fonts
+\usepackage[T1]{fontenc} 
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{backcolor}{rgb}{0.95,0.95,0.95}
+
+\lstset{
+	frame=tb,
+	language=bash,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	% numbers=left,
+	% backgroundcolor=\color{backcolor},
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+\title{$1}
+\author{Rodrigo Rodrigues}
+\date{`!p snip.rv = (date.today())`}
+
+\begin{document}
+\maketitle
+\newpage
+\section{$2}
+$0
+\end{document}
+endsnippet
+
+
+snippet code "code block" b
+\begin{lstlisting}[language=$1, title=${2:codigo}]
+$0
+\end{lstlisting}
+endsnippet
+
+snippet space "make space " b
+\vspace{$1mm}
+$0
+endsnippet
+
+snippet page "new page " b
+
+\newpage
+
+endsnippet
+
+snippet sec "new section" b
+\section{}
+endsnippet
+
+snippet bf "bold" 
+\textbf{$1} $0
+endsnippet
+
+snippet it "bold" 
+\textit{$1} $0
+endsnippet
+
+snippet beg "begin somenthing" b
+\begin{$1}
+$0
+\end{$1}
+endsnippet
+
+snippet tab "begin table" b
+\begin{$1}
+\begin{$2}{${3:c c c}}
+$0
+\end{$2}
+\end{$1}
+endsnippet
+
+snippet it "begin item" b
+\item $1
+endsnippet
+
+
+snippet mint "another way to show code" A
+\begin{minted}{${1:language}}
+$0
+\end{minted}
 endsnippet
